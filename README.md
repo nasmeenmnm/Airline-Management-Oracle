@@ -9,12 +9,17 @@ Administrators can register a new flight by providing a unique flight ID, origin
 ### Passengers can book a specific seat on a flight. The system:
 
 •	Validates if the passenger exists.
+
 •	Validates if the seat number is within flight capacity.
+
 •	Checks whether the seat is already booked using both procedural logic and a database trigger.
+
 •	Inserts the booking and automatically decreases the available seat count.
+
 •	A passenger is allowed to book multiple seats from a flight or different flight, but each one seat booking will be stored as new booking( Drawback)
 
-### Passengers may cancel their bookings. The system removes the booking record and Increases the available seat count in the flight.Passengers can view flights that are available between two cities. Only flights with remaining seats are shown using a cursor-based procedure.For a specific flight, the system returns the list of unbooked seat numbers by comparing the full capacity against the already booked seat numbers.A PL/SQL trigger prevents manual seat overbooking, even if someone tries to insert directly into the Bookings table.
+
+Passengers may cancel their bookings. The system removes the booking record and Increases the available seat count in the flight.Passengers can view flights that are available between two cities. Only flights with remaining seats are shown using a cursor-based procedure.For a specific flight, the system returns the list of unbooked seat numbers by comparing the full capacity against the already booked seat numbers.A PL/SQL trigger prevents manual seat overbooking, even if someone tries to insert directly into the Bookings table.
 
 #### Component of Package
 The pkg_airline package is designed to manage flight and passenger operations in the Airline Management System. It contains procedures and functions that handle the core tasks such as registering flights and passengers, booking and canceling seats, and retrieving available flights or seats.
@@ -22,8 +27,11 @@ Public Procedures
 
 ##### proc_register_flight
 •	The proc_register_flight procedure allows administrators to register new flights 
+
 •	Parameters: flight_ID, origin, destination, and number of available seats. 
+
 •	It ensures that duplicate flight entries are avoided and commits the changes to the database.
+
 
 
 ##### proc_register_passenger
@@ -32,16 +40,25 @@ Public Procedures
 •	It handles duplication errors and stores the data securely in the Passengers table.
 
 ##### proc_book_seat
-•	The proc_book_seat procedure books a specific seat for a passenger on a given flight. 
+•	The proc_book_seat procedure books a specific seat for a passenger on a given flight.
+ 
 •	Parameters: Booking_Id, Passenger_id, Flight_id, Seat_number
+
 •	Before inserting the booking, it checks whether the passenger exists and whether the requested seat is valid and available. 
-•	It uses a private function (func_validate_seat_availability) to ensure the seat number is within the valid range and not already booked. 
+
+•	It uses a private function (func_validate_seat_availability) to ensure the seat number is within the valid range and not already booked.
+ 
 •	If the booking is successful, it updates the Bookings table and decreases the available seat count for the flight in flight table.
+
 ##### proc_cancel_booking
-•	The proc_cancel_booking procedure allows users to cancel an existing booking 
+•	The proc_cancel_booking procedure allows users to cancel an existing booking
+ 
 •	Parameters: Booking_ID. 
+
 •	It validates whether the booking exists, deletes the record from the Bookings table
+
 •	Updates the Flights table to increase the available seats.
+
 
 Public Functions
 ##### func_show_available_flights
