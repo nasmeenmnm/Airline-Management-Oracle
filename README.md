@@ -63,32 +63,54 @@ Public Procedures
 Public Functions
 ##### func_show_available_flights
 •	The function func_show_available_flights returns a list of available flights from a given origin to a destination as a string.
+
 •	Parameters: Origin, Destination
+
 •	It uses a cursor and a record type to loop through the available flights and format the output.
+
 •	If there is a no flights from given origin to destination it will return a message 'No available flights found for the given origin and destination' as a string
-#####func_get_available_seat_numbers
+
+##### func_get_available_seat_numbers
 •	The function func_get_available_seat_numbers returns a list of unbooked seat numbers for a specific flight as a comma-separated string.
+
 •	Parameters: Flight_id
+
 •	It uses a cursor to fetch all booked seats and compares them against the total capacity to determine which seats are still free.
+
 •	If there is no data found in cursor it will exit.
+
 •	It also use REGEXP to store the available seats in comma separated format.
+
 •	Also It use RTRIM to remove the comma which will be added to last
+
 
 Private Functions
 ##### func_get_flight_details
 •	This will return the whole flight details.
+
 •	Parameters:Flight_id
+
 •	If Flight is not found,It will return a Exception
+
 ##### func_validate_seat_availability
 •	It uses to validate a seat number.
+
 •	Parameters:Flight_id, Seat_number
+
 •	This first check if the given seat number is in the range of given flights available seat count.
+
 •	Then it will check that given seat number is already booked using a count variable.
+
 Together, these components provide a complete and modular backend for managing airline bookings, ensuring data accuracy and enforcing business rules through built-in validations and exception handling.
 
-Trigger
+## Trigger
 •	The trigger trg_prevent_manual_duplicate_booking is designed to ensure that no two bookings can be made for the same seat on the same flight. 
+
 •	Even though the seat availability is checked inside the PL/SQL package procedures, this trigger adds an extra layer of protection by preventing direct manual inserts into the Bookings table that bypass the package logic. 
+
 •	It fires automatically before a new row is inserted and checks whether the seat number is already booked for that flight. 
-•	If the seat is already taken, it raises an error using RAISE_APPLICATION_ERROR, stopping the insert and preserving data integrity. 
+
+•	If the seat is already taken, it raises an error using RAISE_APPLICATION_ERROR, stopping the insert and preserving data integrity.
+ 
 •	This trigger enforces an essential business rule: each seat on a flight must be unique to one passenger, and it ensures consistency and reliability in the airline booking system.
+
