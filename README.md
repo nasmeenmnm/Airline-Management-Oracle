@@ -114,3 +114,18 @@ Together, these components provide a complete and modular backend for managing a
  
 •	This trigger enforces an essential business rule: each seat on a flight must be unique to one passenger, and it ensures consistency and reliability in the airline booking system.
 
+## IMAGES<img width="1023" height="221" alt="available seats" src="https://github.com/user-attachments/assets/6df538c2-d609-4792-b4c4-172decd7f260" />
+<img width="1101" height="245" alt="Trigger1" src="https://github.com/user-attachments/assets/0141644f-9139-4d95-b057-7c67e749c42e" />
+<img width="1116" height="140" alt="Trigger" src="https://github.com/user-attachments/assets/b3edcdf1-6987-4b6b-a4c3-9d93e44121f0" />
+<img width="1046" height="338" alt="Proc_register_passenger" src="https://github.com/user-attachments/assets/3a3edc62-f800-480c-9cc1-77cac344686b" />
+<img width="1153" height="321" alt="Proc_register_flights3" src="https://github.com/user-attachments/assets/f0dc8eed-f666-47cd-ad30-79dbb9ca50cd" />
+<img width="877" height="730" alt="Proc_register_flights2" src="https://github.com/user-attachments/assets/efc82ccf-ed96-4021-898c-d48bda3af37d" />
+<img width="1157" height="557" alt="Proc_register_flights" src="https://github.com/user-attachments/assets/84f9b3b9-d0a4-46e2-b11f-49e734a8f837" />
+<img width="940" height="223" alt="fubc_show_flights" src="https://github.com/user-attachments/assets/66d0494b-3d26-4584-8e9e-f3a4bfc0d2a3" />
+<img width="921" height="127" alt="cancel_booking1" src="https://github.com/user-attachments/assets/ad29891d-5d91-48f1-9ffa-3db922dc9bcb" />
+<img width="942" height="445" alt="cancel_booking" src="https://github.com/user-attachments/assets/5d665b8c-99cb-4ffb-981d-8c327cdf019f" />
+<img width="1018" height="340" alt="book_seat3" src="https://github.com/user-attachments/assets/91857474-fe15-4b8b-b2ae-701e36cae284" />
+<img width="1016" height="370" alt="book_seat2" src="https://github.com/user-attachments/assets/7e663424-c1dd-4171-ab4a-14073a42e33f" />
+<img width="1052" height="885" alt="book_seat1" src="https://github.com/user-attachments/assets/e7bd4020-88b2-448d-95a0-3c146214716e" />
+<img width="938" height="191" alt="available seats1" src="https://github.com/user-attachments/assets/b2513c9a-0eed-46d1-8058-8963f595e282" />
+
